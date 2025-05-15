@@ -1,0 +1,201 @@
+:root {
+    --gray: hsla(217,21%,15%);
+    --dark_purple: hsla(270,45%,20%,0.6);
+    --light_purple: hsla(270,45%,80%,1);
+    --white: rgb(216, 214, 240);
+}
+
+* {
+    font-size: clamp(14px, 1.2vw, 16px); 
+    color: var(--white);
+}
+
+h1 {
+    font-size: clamp(1.25rem, 2vw, 1.75rem); 
+}
+
+h2 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--gray);
+    padding: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3.75rem); 
+
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    width: 30%;
+    min-width: 300px;
+    max-width: 400px;
+    height: calc(100vh - 4rem); 
+    gap: clamp(1rem, 3vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside-part {
+    background-color: var(--dark_purple);
+    padding: 1rem 1.25rem;
+    border-radius: 20px;
+
+    box-shadow: 0 0 0.5rem #57449A,
+                0 0 1rem #57449A,
+                0 0 1.5rem #57449A;
+}
+
+.personal-info {
+    height: fit-content;
+    padding-bottom: 0;
+
+    & .myself {
+        display: flex;
+        align-items: center;
+        height: 36%;
+        gap: 2rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        & img {
+           border-radius: 100%;
+           width: clamp(4rem, 8vw, 6rem);
+           height: auto;
+           object-fit: cover; 
+        }
+    }
+
+    & .about-me-text {
+        margin-top: 1rem;
+    }
+}
+
+.contact-me {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 200px;
+
+    & .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(1rem, 3vw, 3rem);
+        margin-bottom: 1rem;
+
+        & a {
+            transition: all 0.3s ease;
+        }
+
+        & i {
+            transition: all 0.3s ease;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+        }
+    }
+
+    & .mensage-me {
+        flex: 1;
+        display: flex;
+
+        & form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            
+            & input {
+                border: outset 2px black;
+                padding: 5px 15px;
+                border-radius: 15px 15px 0px 0px;
+                color: black;
+                background-color: var(--light_purple);
+            }
+            & button {
+                padding: 5px;
+                border-radius: 0px 0px 15px 15px;
+                color: black;
+                background-color: var(--light_purple);
+            }
+
+            & textarea {
+                border: outset 2px black;
+                border-top: none;
+                border-bottom: none;
+                flex: 1;
+                padding: 10px;
+                min-height: 100px;
+                resize: none;
+                color: black;
+            }
+        }
+    }
+}
+
+section {
+    width: 60%;
+    min-width: 400px;
+    height: calc(100vh - 4rem); 
+    gap: clamp(1rem, 3vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.technical-info {
+    height: fit-content;
+    background-color: var(--dark_purple);
+    padding: 0.9rem 1.6rem;
+    border-radius: 20px;
+
+    box-shadow: 0 0 0.5rem #57449A,
+                0 0 1rem #57449A,
+                0 0 1.5rem #57449A;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & .tech {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        margin-top: 1rem;
+        gap: 1.5rem;
+        & img{
+            width: 4rem;
+            height: auto;
+        }     
+    }
+}
+
+.projects {
+    display: flex;
+    flex: 1;
+
+    & iframe {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        box-shadow: 0 0 0.5rem #57449A,
+                    0 0 1rem #57449A,
+                    0 0 1.5rem #57449A;
+    }
+    
+}
+
+.link a:hover {
+    transform: scale(1.2);
+
+    & i {
+        color: var(--light_purple);
+    }
+}
